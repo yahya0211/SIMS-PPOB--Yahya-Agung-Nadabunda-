@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteObject } from "react-router-dom";
-import { RegisterPage } from "../pages/auth/Register/register";
+import { RegisterPage } from "../pages/auth/Register/Register";
 import { Login } from "../pages/auth/Login/Login";
 import HomePage from "../pages/HomePage/HomePage";
 import { authRoutes } from "./navbarRoute";
