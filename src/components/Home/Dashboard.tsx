@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { GoEye, GoEyeClosed } from "react-icons/go";
-import { Outlet } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux";
 import { balanceAsync } from "../../redux/async/balance";
 import { getProfile } from "../../redux/async/profile";
@@ -18,12 +17,21 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(balanceAsync());
     dispatch(getProfile());
-  }, [balanceState.data.balance]);
+  }, [dispatch]);
+
   return (
     <div>
       <div className="flex justify-between">
         <div>
-          <img src={profileState.data.profile_image !== null && profileState.data.profile_image !== "https://minio.nutech-integrasi.app/take-home-test/null" ? profileState.data.profile_image : "./Profile Photo.png"} alt="profile-photo" />
+          <img
+            src={
+              profileState.data.profile_image !== null &&
+              profileState.data.profile_image !== "https://minio.nutech-integrasi.app/take-home-test/null"
+                ? profileState.data.profile_image
+                : "./Profile Photo.png"
+            }
+            alt="profile-photo"
+          />
           <h1 className="flex flex-col gap-2 py-1">
             Selamat datang,{" "}
             <span className="text-3xl font-semibold">

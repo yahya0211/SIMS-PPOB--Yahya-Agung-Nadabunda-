@@ -11,15 +11,15 @@ export interface ITopUpResponse {
 
 export const balanceAsync = createAsyncThunk<ITopUpResponse>("balance", async (_, { rejectWithValue }) => {
   try {
-    const response = await API.get("/balance", {
+    const response = await API.get<ITopUpResponse>("/balance", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-    });    
+    });
 
-    return response.data; // Returning the full API response structure
+    return response.data;
   } catch (error) {
-    const err = error as any;
+    const err = error as Error;
     return rejectWithValue(err.message || "Terjadi kesalahan");
   }
 });

@@ -11,7 +11,7 @@ export interface ITopUpResponse {
   top_up_amount: number;
 }
 
-export const topUpAsync = createAsyncThunk<ITopUpResponse, ITopUpInterface, { rejectValue: string }>("topup/topUpAsync", async (props, { rejectWithValue }) => {
+export const topUpAsync = createAsyncThunk<ITopUpResponse, ITopUpInterface, { rejectValue: string }>("topup", async (props, { rejectWithValue }) => {
   try {
     const response = await API.post(
       "/topup",

@@ -25,7 +25,6 @@ export const updateProfileAsync = createAsyncThunk<IUpdateProfileResponse, { fir
       }
     );
 
-
     return response.data;
   } catch (error) {
     console.log(error.response); // Tambahkan ini untuk melihat detail error

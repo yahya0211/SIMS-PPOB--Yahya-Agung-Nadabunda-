@@ -12,7 +12,7 @@ export interface IProfileResponse {
   };
 }
 
-export const getProfile = createAsyncThunk<IProfileResponse>("profile/getProfile", async (_, { rejectWithValue }) => {
+export const getProfile = createAsyncThunk<IProfileResponse>("profile", async (_, { rejectWithValue }) => {
   try {
     const response = await API.get("/profile", {
       headers: {
