@@ -1,3 +1,16 @@
 {
-  "redirects": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "routes": [
+    {
+      "src": "/register",
+      "dest": "/register"
+    },
+    {
+      "src": "/login",
+      "dest": "/login"
+    },
+    {
+      "src": "/",
+      "dest": "/"
+    }
+  ]
 }
