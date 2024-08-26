@@ -36,6 +36,7 @@ const ProfilePage = () => {
       })
     );
     setIsEditMode(false);
+    dispatch(getProfile());
   };
 
   useEffect(() => {
@@ -74,14 +75,7 @@ const ProfilePage = () => {
 
         <div className="relative my-2 w-[50%]">
           <IoAt className="absolute top-1/2 -translate-y-1/2 left-3 text-lg text-black-400" />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={!isEditMode}
-            className={`w-full h-10 pl-10 p-2 border rounded-md focus:outline-none ${isEditMode ? "focus:ring-2 focus:ring-red-500" : ""}`}
-          />
+          <input type="email" name="email" value={formData.email} disabled className={`w-full h-10 pl-10 p-2 border rounded-md focus:outline-none ${isEditMode ? "focus:ring-2 focus:ring-red-500" : ""}`} />
         </div>
 
         <div className="relative my-2 w-[50%]">

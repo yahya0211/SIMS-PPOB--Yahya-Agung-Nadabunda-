@@ -23,15 +23,7 @@ const Dashboard = () => {
     <div>
       <div className="flex justify-between">
         <div>
-          <img
-            src={
-              profileState.data.profile_image !== null &&
-              profileState.data.profile_image !== "https://minio.nutech-integrasi.app/take-home-test/null"
-                ? profileState.data.profile_image
-                : "./Profile Photo.png"
-            }
-            alt="profile-photo"
-          />
+          <img src={profileState.data.profile_image !== null && profileState.data.profile_image !== "https://minio.nutech-integrasi.app/take-home-test/null" ? profileState.data.profile_image : "./Profile Photo.png"} alt="profile-photo" />
           <h1 className="flex flex-col gap-2 py-1">
             Selamat datang,{" "}
             <span className="text-3xl font-semibold">
