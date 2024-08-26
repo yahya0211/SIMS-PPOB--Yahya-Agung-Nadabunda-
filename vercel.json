@@ -1,16 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/register",
-      "dest": "/register"
-    },
-    {
-      "src": "/login",
-      "dest": "/login"
-    },
-    {
-      "src": "/",
-      "dest": "/"
+      "source": "/(.*)",
+      "destination": "/*"
     }
   ]
 }
